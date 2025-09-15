@@ -101,3 +101,31 @@ select *from Students
 --DDL – Tuzilma yaratish
 --DCL – Ruxsatlarni boshqarish
 --TCL – Tranzaksiyalarni boshqarish
+
+--Task 8
+insert into Students values(1,'Lola', 20),(2,'Zara',22),(3,'Gigi',24)
+select * from Students
+
+--Task 9
+--Tiklash (Restore) bosqichlari
+--.bak faylini yuklab olish
+--Berilgan havoladan AdventureWorksDW2022.bak faylini yuklab oling.
+--Faylni kompyuteringizda saqlang (masalan: C:\Backups\AdventureWorksDW2022.bak).
+--SQL Server Management Studio (SSMS) dasturini ochish
+--SSMS ni ishga tushiring.
+--Windows Authentication yoki SQL Server Authentication orqali serverga ulanib oling.
+--Restore Database oynasini ochish
+--Object Explorer da Databases papkasini o‘ng tugma bilan bosing.
+--Restore Database... ni tanlang.
+--Backup fayl manzilini ko‘rsatish
+--Source qismida Device ni tanlang.
+--... tugmasini bosing → Add ni bosing → yuklab olgan .bak faylni tanlang.
+--OK bosing.
+--Restore sozlamalarini tekshirish
+--Destination qismida Database nomi AdventureWorksDW2022 ekanini tekshiring.
+--Files bo‘limida .mdf va .ldf fayllarning yo‘li to‘g‘ri ekanini ko‘ring.
+--Tiklashni boshlash
+--Options bo‘limida Overwrite the existing database (WITH REPLACE) belgilang (agar kerak bo‘lsa).
+--OK bosing.
+--Tugallash
+--Jarayon tugagach, Databases bo‘limida AdventureWorksDW2022 bazasi paydo bo‘ladi.

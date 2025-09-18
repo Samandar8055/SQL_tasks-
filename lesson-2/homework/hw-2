@@ -108,7 +108,7 @@ create table Products (
   ProductID int identity(1,1) primary key,
   ProductName varchar (40),
   Category varchar (40),
-  Price decimal
+  Price decimal (10,2)
   );
 
 select *from Products
@@ -121,3 +121,39 @@ check(price >0);
 select * from Products
 
 --Task 19
+--Task 19
+alter table Products 
+add StockQuantity int default 50;
+
+--Task 20
+exec sp_rename 'Products.Category', 'ProductCategory','COLUMN'
+
+--Task 21 
+insert into Products values ('Apple', 'Fruit',5000,10), 
+   ('Banana', 'Fruit',10000,10),
+   ('Mnago', 'Fruit',15000,70),
+   ('Dragonfruit', 'Fruit',55000,10),
+   ('Pineapple', 'Fruit',5000,10)
+
+insert into Products(ProductName,ProductCategory, StockQuantity)
+values ('Papaya', 'Fruit' ,10);
+
+--Task 22
+select *
+into Products_Backup
+from Products
+
+select * from Products_Backup
+
+--Task 23
+exec sp_rename 'Products', 'Inventory';
+
+SELECT * FROM Inventory 
+
+-- Task 24
+ALTER TABLE Inventory
+ALTER COLUMN Price FLOAT;
+
+--tASK 25
+alter table Inventory
+add ProductCode int identity(1000,5)

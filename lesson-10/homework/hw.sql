@@ -286,6 +286,27 @@ LEFT JOIN Courses AS c
     AND c.CourseName = 'Math 101'
 WHERE c.CourseName IS NULL;
 
+--task 26
+select *from Orders
+select *from Payments 
+
+select o.OrderID, o.OrderDate, p.PaymentID
+from Orders as o
+left join Payments as p
+on o.OrderID = p.OrderID
+where p.PaymentID is null
+
+--task 27 
+select  *from Products
+select *from Categories
+
+select p.ProductID, p.ProductName, c.CategoryName
+from Products as p
+left join Categories as c
+on p.Category = c.CategoryID
+where c.CategoryName = 'Electronics' or
+c.CategoryName = 'Furniture'
+
 
 
 

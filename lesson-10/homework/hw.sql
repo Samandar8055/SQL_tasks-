@@ -239,6 +239,54 @@ left join Employees as e2
 on 
 where e1.Salary >60000
 
+SELECT 
+    e1.Name AS Employee1,
+    e2.Name AS Employee2,
+    e1.ManagerID,
+    e1.Salary
+FROM Employees AS e1
+JOIN Employees AS e2
+    ON e1.ManagerID = e2.ManagerID
+    AND e1.EmployeeID < e2.EmployeeID   -- avoid duplicates (A–B, B–A)
+WHERE e1.Salary > 60000 
+  AND e2.Salary > 60000;
+
+--task 23
+
+select *from Employees
+select *from Departments
+
+select e.Name, d.DepartmentName
+from Employees as e
+inner join Departments as d
+on e.DepartmentID = d.DepartmentID
+and d.DepartmentName like 'M%'
+
+--task 24
+select *from Products
+select *from Sales
+
+select s.SaleID, p.ProductName, s.SaleAmount
+from Products as p
+inner join Sales as s
+on p.ProductID = s.ProductID
+and s.SaleAmount > 500
+
+--task 25 
+select *from Students
+select *from Courses
+select *from Enrollments
+
+SELECT s.StudentID, s.Name
+FROM Students AS s
+LEFT JOIN Enrollments AS e
+    ON s.StudentID = e.StudentID
+LEFT JOIN Courses AS c
+    ON e.CourseID = c.CourseID 
+    AND c.CourseName = 'Math 101'
+WHERE c.CourseName IS NULL;
+
+
 
 
 

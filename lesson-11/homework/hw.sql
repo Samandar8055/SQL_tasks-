@@ -188,7 +188,29 @@ where c.City = 'Los Angeles' and
 o.TotalAmount > 300
 
 --Task 18
-select 
+select *from Employees
+select *from Departments
+
+select e.Name, d.Departmentname
+from Employees e
+join Departments d
+on e.DepartmentID = d.DepartmentID
+And (d.DepartmentName = 'Human Resources' or
+d.DepartmentName = 'Human Resources') 
+OR e.Name LIKE '%a%e%i%o%'   -- simplified check (optional)
+
+--Task 19
+select *from Employees
+select *from Departments
+
+select e.Name, d.DepartmentName,e.Salary
+from Employees e
+inner join Departments d
+on e.DepartmentID = d.DepartmentID
+where (e.Salary > 60000)
+and (d.DepartmentName = 'Sales'or
+d.DepartmentName = 'Marketing')
+
 
 
 

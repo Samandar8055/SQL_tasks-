@@ -76,7 +76,16 @@ from employees
 where e.department_id = department_id)
 
 --task 8 
+ 
 select *from students
 select *from grades 
 
-select 
+SELECT s.name, g.course_id, g.grade
+FROM students s
+JOIN grades g ON s.student_id = g.student_id
+WHERE g.grade = (
+    SELECT MAX(grade)
+    FROM grades
+    WHERE course_id = g.course_id
+);
+

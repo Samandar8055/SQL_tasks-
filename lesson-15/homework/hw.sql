@@ -89,3 +89,17 @@ WHERE g.grade = (
     WHERE course_id = g.course_id
 );
 
+
+--Task 9 
+select * from  products 
+
+
+SELECT p1.product_name, p1.category_id, p1.price
+FROM products p1
+WHERE 2 = (
+    SELECT COUNT(DISTINCT p2.price)
+    FROM products p2
+    WHERE p2.category_id = p1.category_id
+      AND p2.price > p1.price
+);
+

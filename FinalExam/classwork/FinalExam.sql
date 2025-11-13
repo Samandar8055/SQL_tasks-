@@ -13,7 +13,8 @@ create database finalexam
 go
 use finalexam
 
-
+--Full Name: Samandar Pirmatov
+--Group Number: F_43    
 -----------------------------------------------------------------------------------------------------------------------
 
 --PUZZLE 1: done
